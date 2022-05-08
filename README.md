@@ -12,4 +12,8 @@ then go your browser and write
 
 you should see this tab:
 
-![This is an image](src/images/docs_test.png)
+![image1](src/images/docs_test.png)
+
+Try out /prediction/sentiment endpoint by passing a string sentence in english
+
+![image2](src/images/test_sentiment_analysis.png)

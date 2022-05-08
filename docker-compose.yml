@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  mlserver:
+    image: mlserver
+    build:
+      context: .
+    container_name: mlserver
+    ports:
+      - '8000:8000'

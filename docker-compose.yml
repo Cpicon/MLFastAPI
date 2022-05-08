@@ -1,9 +1,28 @@
 version: "3.9"
 services:
+  reverse-proxy:
+    image: traefik
+    # Enables the web UI and tells Traefik to listen to docker
+    command: --api.insecure=true --providers.docker
+    ports:
+      - "80:80"
+      - "8080:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+
+#  whoami:
+#    # A container that exposes an API to show its IP address
+#    image: traefik/whoami
+#    labels:
+#      - "traefik.http.routers.whoami.rule=Host(`whoami.docker.localhost`)"
+
   mlserver:
     image: mlserver
+    labels:
+      - "traefik.http.routers.mlserver.rule=Host(`my.mlapp.localhost`)"
     build:
       context: .
-    container_name: mlserver
-    ports:
-      - '8000:8000'
+#    container_name: mlserver
+#    ports:
+#      - '8000:8000'

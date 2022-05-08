@@ -1,7 +1,7 @@
 from transformers import pipeline
 
 def download_model():
-    model_path = "app/models/distilbert-base-uncased-finetuned-sst-2-english"
+    model_path = "app/ml_models/distilbert-base-uncased-finetuned-sst-2-english"
     classifier = pipeline('sentiment-analysis')
     classifier.save_pretrained(model_path)
     # %% test if it works

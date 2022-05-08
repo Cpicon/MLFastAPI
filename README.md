@@ -8,7 +8,7 @@ docker-compose up
 
 then go your browser and write
 
-`http://0.0.0.0:8000/docs`
+`http://my.mlapp.localhost/docs`
 
 you should see this tab:
 
@@ -17,3 +17,10 @@ you should see this tab:
 Try out /prediction/sentiment endpoint by passing a string sentence in english
 
 ![image2](src/images/test_sentiment_analysis.png)
+
+Using `curl`:
+
+```Bash
+user:path # curl -H Host:my.mlapp.localhost http://127.0.0.1/health  
+{"status":"ok"}%  
+```
